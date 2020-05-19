@@ -5,7 +5,8 @@
 #target Illustrator  
 
 var OPTIONS = {
-    size: 32
+    width: 170,
+    height: 108,
 }
 
 if (app.documents.length > 0) {  
@@ -14,14 +15,14 @@ if (app.documents.length > 0) {
     var idoc  = app.activeDocument;  
     var title = "Resize All Artboards";  
 
-    //var width = Number(Window.prompt ("Enter New Artboard Width in points", 612, title));  
-    //var height = Number(Window.prompt ("Enter New Artboard Height in points", 792, title));  
+    OPTIONS.width = Number(Window.prompt ("Enter New Artboard Width in points", 170, title));  
+     OPTIONS.height = Number(Window.prompt ("Enter New Artboard Height in points", 108, title));  
     
-    OPTIONS.size = Number(Window.prompt ("Enter New Artboard size in pixels (W & H)", 32, title));
+   // OPTIONS.size = Number(Window.prompt ("Enter New Artboard size in pixels (W & H)", 32, title));
   
     try {
-        var width  = OPTIONS.size;
-        var height = OPTIONS.size;
+        var width  = OPTIONS.width;
+        var height = OPTIONS.height;
 
         for (i=0; i<idoc.artboards.length; i++) {
             var abBounds = idoc.artboards[i].artboardRect;// left, top, right, bottom
